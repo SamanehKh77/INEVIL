@@ -1,0 +1,13 @@
+function [model]=Updatemodel(model1,model2)
+wf=model1.w;
+mf=model1.mu;
+vf=model1.sigma;
+nf=model1.number;
+wg=model2.w;
+mg=model2.mu;
+vg=model2.sigma;
+ng=model2.number;
+model.w=(nf*wf+ng*wg)/(nf+ng);
+model.mu=bsxfun(@rdivide,(nf*bsxfun(@times,wf,mf)+ng*bsxfun(@times,wg,mg)),(nf*wf+ng*wg));
+model.sigma= bsxfun(@rdivide,(nf*bsxfun(@times,wf,vf+(mf.^2))+ng*bsxfun(@times,wg,vg+(mg.^2))),(nf*wf+ng*wg))-(model.mu.^2);
+model.number=ng+nf;
