@@ -11,8 +11,8 @@ ds_factor = 2;
 load ubm
 LIMITmin=-inf;
 percentage=[]
-load('D:\LEVIS\NEVIL1.0\UBM\UBMdata\Data_OneStopMoveEnter1_ubm')
-load('D:\LEVIS\Datasets\DATA_CAVAR\label_OneStopMoveEnter1')
+load('Data_OneStopMoveEnter1_ubm')
+load('label_OneStopMoveEnter1')
 Data=Data_OneStopMoveEnter1_ubm;
 label=label_OneStopMoveEnter1;
 LIMITmin=-inf;
